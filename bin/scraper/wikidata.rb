@@ -3,7 +3,6 @@
 
 require 'every_politician_scraper/wikidata_query'
 
-agent = 'every-politican-scrapers/moldova-parliament'
 query = <<SPARQL
   SELECT (STRAFTER(STR(?member), STR(wd:)) AS ?item) ?name
   WHERE {
@@ -18,4 +17,5 @@ query = <<SPARQL
   ORDER BY ?name
 SPARQL
 
+agent = 'every-politican-scrapers/trinidad-and-tobago-representatives'
 puts EveryPoliticianScraper::WikidataQuery.new(query, agent).csv
